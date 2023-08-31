@@ -38,15 +38,16 @@ export default function Weather() {
 
         <button onClick={getDataApi}>Get Data</button>
 
-        <p>City: {data.name !== undefined ? data.name : ` `}, {( data.sys !==undefined && data.sys.country !== undefined) ? data.sys && data.sys.country : ` `}</p>
-
-        <p>Description: {data.weather && data.weather[0] && data.weather[0].description}</p>
-
-        {icon && <img src={`http://openweathermap.org/img/w/${icon}.png`} alt="Weather Icon" />}
-
-        <p>Temperature: { data.main !== undefined ? data.main.temp : ` `}</p>
-
-        <p>Feels Like: {data.main !== undefined ? data.main.feels_like : ` ` }</p>
+        {(data !== undefined && data.main!== undefined) ? (
+            <div>
+                <p>City: {data.name}, {data.sys && data.sys.country}</p>
+                <p>Description: {data.weather && data.weather[0] && data.weather[0].description}</p>
+                {/* <p>{data.weather && data.weather[0] && data.weather[0].icon}</p> */}
+                {icon && <img src={`http://openweathermap.org/img/w/${icon}.png`} alt="Weather Icon" />}
+                <p>Temperature: {data.main.temp}°F</p>
+                <p>Feels Like: {data.main.feels_like}°F</p>
+            </div>
+        ) : ` `} 
     </div>
   )
 }
