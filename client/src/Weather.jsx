@@ -31,7 +31,15 @@ export default function Weather() {
 
         <button onClick={getDataApi}>Get Data</button>
 
-        <p>{data.name}</p>
+        <p>City: {data.name !== undefined ? data.name : ` `}, {( data.sys !==undefined && data.sys.country !== undefined) ? data.sys && data.sys.country : ` `}</p>
+
+        <p>Description: {data.weather && data.weather[0] && data.weather[0].description}</p>
+
+        <p>{data.weather && data.weather[0] && data.weather[0].icon}</p>
+
+        <p>Temperature: { data.main !== undefined ? data.main.temp : ` `}</p>
+
+        <p>Feels Like: {data.main !== undefined ? data.main.feels_like : ` ` }</p>
     </div>
   )
 }
