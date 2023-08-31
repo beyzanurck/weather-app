@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 export default function Weather() {
 
     const [data, setData] = useState({})
+    const [input, setInput] = useState('')
 
     async function getDataApi() {
 
@@ -15,14 +16,22 @@ export default function Weather() {
         const data = await response.json();
         setData(data)
 
+        console.log(input)
+
+
         
     }
-    console.log(data)
 
 
   return (
     <div>
       <h1>Weather App</h1>
+
+        <input 
+            type='text'
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+        />
 
         <button onClick={getDataApi}>Get Data</button>
 
