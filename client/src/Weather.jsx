@@ -17,13 +17,16 @@ export default function Weather() {
 
         
     }
-    getDataApi()
     console.log(data)
 
 
   return (
     <div>
-      <p>Test hello</p>
+      <h1>Weather App</h1>
+
+        <button onClick={getDataApi}>Get Data</button>
+
+        <p>{data.name}</p>
     </div>
   )
 }
