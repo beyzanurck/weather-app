@@ -4,6 +4,8 @@ export default function Weather() {
 
     const [data, setData] = useState({})
     const [input, setInput] = useState('')
+    const [icon, setIcon] = useState(undefined)
+
 
     async function getDataApi() {
 
@@ -15,6 +17,11 @@ export default function Weather() {
 
         const data = await response.json();
         setData(data)
+
+        if (data.weather && data.weather[0]) {
+            const iconCode = data.weather[0].icon;
+            setIcon(iconCode);
+        }
 
     }
 
@@ -35,7 +42,7 @@ export default function Weather() {
 
         <p>Description: {data.weather && data.weather[0] && data.weather[0].description}</p>
 
-        <p>{data.weather && data.weather[0] && data.weather[0].icon}</p>
+        {icon && <img src={`http://openweathermap.org/img/w/${icon}.png`} alt="Weather Icon" />}
 
         <p>Temperature: { data.main !== undefined ? data.main.temp : ` `}</p>
 
