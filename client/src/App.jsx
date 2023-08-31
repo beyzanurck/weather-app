@@ -1,4 +1,5 @@
 import './App.css'
+import Weather from './Weather';
 import { useEffect, useState } from 'react'
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
     <>
       <h1>Test for frontend</h1>
       {test}
+      <Weather/>
     </>
   )
 }
