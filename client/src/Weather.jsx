@@ -22,7 +22,6 @@ export default function Weather() {
             const iconCode = data.weather[0].icon;
             setIcon(iconCode);
         }
-
     }
 
 
@@ -40,12 +39,28 @@ export default function Weather() {
 
         {(data !== undefined && data.main!== undefined) ? (
             <div>
-                <p>City: {data.name}, {data.sys && data.sys.country}</p>
-                <p>Description: {data.weather && data.weather[0] && data.weather[0].description}</p>
-                {/* <p>{data.weather && data.weather[0] && data.weather[0].icon}</p> */}
+                <p>
+                    <span className="labels">City:</span> 
+                    {data.name}, {data.sys && data.sys.country}
+                </p>
+
+                <p>
+                    <span className="labels">Description:</span> 
+                    {data.weather && data.weather[0] && data.weather[0].description}
+                </p>
+
                 {icon && <img src={`http://openweathermap.org/img/w/${icon}.png`} alt="Weather Icon" />}
-                <p>Temperature: {data.main.temp}°F</p>
-                <p>Feels Like: {data.main.feels_like}°F</p>
+
+                <p>
+                    <span className="labels">Temperature:</span> 
+                    {data.main.temp}°F
+                </p>
+
+                <p>
+                    <span className="labels">Feels Like: </span> 
+                    {data.main.feels_like}°F
+                </p>
+
             </div>
         ) : ` `} 
     </div>
