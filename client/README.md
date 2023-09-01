@@ -1,18 +1,19 @@
 
 ## Weather App
+This project is a Techtonica assignment, and it marks my first attempt at connecting the backend and frontend parts of a project.
 
-### Technologies Used:
+### Technologies/Dependencies Used:
 
 ##### Backend:
-Node.js
-Express.js
-CORS 
-dotenv 
+* Node.js
+* Express.js
+* CORS 
+* dotenv 
 
 ##### Frontend:
-React
-Vite 
-CSS 
+* React
+* Vite 
+* CSS 
 
 ##### External Services/APIs:
 OpenWeatherMap API
