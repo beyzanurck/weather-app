@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export default function Weather() {
+export default function Weather({ apiKey }) {
 
     const [data, setData] = useState({})
     const [input, setInput] = useState('')
@@ -9,7 +9,7 @@ export default function Weather() {
 
     async function getDataApi() {
 
-        const APIKEY = 'e5fc6a0c92924f00c736301b823f652e';
+        const APIKEY = apiKey;
         const city = input;
 
 
