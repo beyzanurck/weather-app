@@ -7,7 +7,7 @@ app.use(cors());
 const PORT = process.env.PORT || 1001;
 
 app.get('/api', (req, res) => {
-    res.json({ message: 'This is a test for backend' });
+    res.json({ message: 'Data acquired from the secret lair! 🌐🔍🚀' });
 });
   
   
